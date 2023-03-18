@@ -16,7 +16,7 @@ class MyService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Thread.sleep(1000)
         Log.e(MainActivity.TAG, "onStartCommand() called ${intent?.getStringExtra("myKey")?:"NO DATA"}")
-        for (i in 1..10){
+        for (i in 1..100){
             Thread.sleep(1000)
             randomNumber = Random().nextInt(100)
             Log.e(MainActivity.TAG, "RandomNumber: $randomNumber")

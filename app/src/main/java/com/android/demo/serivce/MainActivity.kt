@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, MyService::class.java)
         intent.putExtra("myKey", "myValue")
         startService(intent)
-        Thread.sleep(2000)
-        stopService(Intent(this, MyService::class.java))
     }
 
     companion object {
