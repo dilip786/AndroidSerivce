@@ -14,6 +14,19 @@ intent.putExtra("myKey", "myValue")
 startService(intent)
 ```
 
+To declare a Service in your AndroidManifest.xml file, you can use the <service> element. Here is an example:
+```
+<service
+android:name=".MyService"
+android:enabled="true"
+android:exported="false" />
+```
+
+* The android:enabled attribute is used to indicate whether the Service is enabled or not. When android:enabled is set to true, the Service is enabled and can be started or bound to by other components in the application or by other applications. 
+* If android:enabled is set to false, the Service is disabled and cannot be started or bound to by other components or applications. This is useful when you want to temporarily disable a Service without removing it from the manifest file.
+* By default, the android:enabled attribute is set to true. If you do not explicitly set the attribute in your manifest file, it will default to true.
+* When android:exported is set to "false", it means that the component is not available for use by other applications or components. This is the default value for this attribute, and it is generally a good practice to keep it set to "false" for components that do not need to be accessed by other applications or components.
+
 ### Stop service
 
 * Calling stopService() does not stop the service immediately. When stopService() is called, the service is marked for termination and its onDestroy() method is called. However, the system may not immediately destroy the service, as there may still be ongoing work being done in the service.
