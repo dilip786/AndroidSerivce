@@ -32,4 +32,8 @@ android:exported="false" />
 * Calling stopService() does not stop the service immediately. When stopService() is called, the service is marked for termination and its onDestroy() method is called. However, the system may not immediately destroy the service, as there may still be ongoing work being done in the service.
 * The system will destroy the service as soon as it is no longer in use (i.e., all clients have called unbindService() if the service was bound, and there are no pending start requests if the service was started with startService()).
 
+### Note
+
+*Starting from Android 11 (API level 30), when an app is in the background and its processes are no longer in use, the system may stop the app's background services. This means that if the app has no running components or if its running components are no longer being used by the user, the system may decide to stop the app's processes in order to free up system resources and improve performance.
+
 
