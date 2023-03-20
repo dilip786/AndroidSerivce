@@ -32,6 +32,13 @@ android:exported="false" />
 * Calling stopService() does not stop the service immediately. When stopService() is called, the service is marked for termination and its onDestroy() method is called. However, the system may not immediately destroy the service, as there may still be ongoing work being done in the service.
 * The system will destroy the service as soon as it is no longer in use (i.e., all clients have called unbindService() if the service was bound, and there are no pending start requests if the service was started with startService()).
 
+
+### Return type of onStartCommand()
+
+* START_STICKY- It will tell the system to create a newest copy of the service, when available memory is sufficient to do, after it retains state and recovers from the low memory. In this process we will loose the results that might have calculated before. 
+* START_REDELIVER_INTENT- It will tell the system to restart and regain the service after the crash and also redeliver the intents that were present at the time of crash happened. 
+* START_NOT_STICKY- It will tell the system not to worry and bother about to restart the service, even when it is having sufficient available memory.
+
 ### Note
 
 * Starting from Android 11 (API level 30), when an app is in the background and its processes are no longer in use, the system may stop the app's background services. This means that if the app has no running components or if its running components are no longer being used by the user, the system may decide to stop the app's processes in order to free up system resources and improve performance.
