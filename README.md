@@ -34,6 +34,6 @@ android:exported="false" />
 
 ### Note
 
-*Starting from Android 11 (API level 30), when an app is in the background and its processes are no longer in use, the system may stop the app's background services. This means that if the app has no running components or if its running components are no longer being used by the user, the system may decide to stop the app's processes in order to free up system resources and improve performance.
+* Starting from Android 11 (API level 30), when an app is in the background and its processes are no longer in use, the system may stop the app's background services. This means that if the app has no running components or if its running components are no longer being used by the user, the system may decide to stop the app's processes in order to free up system resources and improve performance.
 
 
